@@ -1,6 +1,6 @@
 # funding-harvester
 
-![python](https://img.shields.io/badge/python-3.11%2B-1f4e79) ![tests](https://img.shields.io/badge/tests-11%20OK-2e7d32) ![mode](https://img.shields.io/badge/trading-paper%20uniquement-555555)
+![python](https://img.shields.io/badge/python-3.11%2B-1f4e79) ![tests](https://img.shields.io/badge/tests-11%20OK-2e7d32) ![mode](https://img.shields.io/badge/trading-paper%20uniquement-555555) ![licence](https://img.shields.io/badge/licence-MIT-555555)
 
 🇬🇧 [English version](README.md) · Projet lié : **[AlphaForge](https://github.com/theojoyerclement-crypto/alphaforge)**
 
@@ -223,3 +223,7 @@ recherche quant crypto plus large : features sans fuite d'information, contrôle
 multiples, backtests qui comptent les coûts, et paper trading sur le même code.
 funding-harvester applique la même discipline (test hors échantillon, frais explicites,
 limites publiées) à une source de rendement précise et structurelle : le funding des perps.
+
+---
+
+Sous [licence MIT](LICENSE).

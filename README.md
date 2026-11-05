@@ -1,6 +1,6 @@
 # funding-harvester
 
-![python](https://img.shields.io/badge/python-3.11%2B-1f4e79) ![tests](https://img.shields.io/badge/tests-11%20passing-2e7d32) ![mode](https://img.shields.io/badge/trading-paper%20only-555555)
+![python](https://img.shields.io/badge/python-3.11%2B-1f4e79) ![tests](https://img.shields.io/badge/tests-11%20passing-2e7d32) ![mode](https://img.shields.io/badge/trading-paper%20only-555555) ![license](https://img.shields.io/badge/license-MIT-555555)
 
 🇫🇷 [Version française](README.fr.md) · Related project: **[AlphaForge](https://github.com/theojoyerclement-crypto/alphaforge)**
 
@@ -217,4 +217,4 @@ structural source of return: perp funding.
 
 ---
 
-Code comments and console output are in French.
+Code comments and console output are in French. Licensed under the [MIT License](LICENSE).
