@@ -40,6 +40,10 @@ class Telegram:
         if self.enabled:
             self._q.put(f"{self.prefix} {text}")
 
+    def _safe(self, e):
+        """Texte d'erreur sans le token (les exceptions requests contiennent l'URL)."""
+        return str(e).replace(self.token, "***") if self.token else str(e)
+
     def _sender(self):
         url = f"https://api.telegram.org/bot{self.token}/sendMessage"
         while True:
@@ -52,7 +56,7 @@ class Telegram:
                         break
                     log.warning("Telegram HTTP %s : %s", r.status_code, r.text[:200])
                 except requests.RequestException as e:
-                    log.warning("Telegram injoignable : %s", e)
+                    log.warning("Telegram injoignable : %s", self._safe(e))
                 time.sleep(2 ** attempt)
 
     def poll_commands(self, timeout_s=30):
@@ -71,7 +75,7 @@ class Telegram:
                              params=params, timeout=timeout_s + 10)
             updates = r.json().get("result", [])
         except (requests.RequestException, ValueError) as e:
-            log.warning("getUpdates echoue : %s", e)
+            log.warning("getUpdates echoue : %s", self._safe(e))
             time.sleep(5)
             return []
         cmds = []
