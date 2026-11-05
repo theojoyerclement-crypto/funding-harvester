@@ -1,0 +1,30 @@
+[Unit]
+Description=Funding harvester - bot de paper trading (aucun ordre reel)
+After=network-online.target
+Wants=network-online.target
+# relance sans limite : un bot qui s'arrête de lui-même ne sert à rien
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=funding
+Group=funding
+WorkingDirectory=/opt/funding-harvester
+EnvironmentFile=-/opt/funding-harvester/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/funding-harvester/.venv/bin/python paper_bot.py
+Restart=always
+RestartSec=10
+# SIGTERM -> arrêt propre (état sauvé dans paper.db)
+KillSignal=SIGTERM
+TimeoutStopSec=20
+
+# Durcissement : le bot n'écrit que dans son dossier
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/opt/funding-harvester
+
+[Install]
+WantedBy=multi-user.target

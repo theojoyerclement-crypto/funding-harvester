@@ -1,0 +1,31 @@
+# Secrets
+.env
+.env.*
+!deploy/env.example
+
+# Databases / raw data (rebuild with: python collector.py)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+data/
+raw/
+
+# Bot runtime
+KILL
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
